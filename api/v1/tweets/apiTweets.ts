@@ -3,5 +3,5 @@ import { apiGetTweets } from "./apiGetTweets";
 
 export const tweetsRouter = Router();
 
-tweetsRouter.route("/")
-    .get(apiGetTweets)
+tweetsRouter.route("/:id")
+  .get(apiGetTweets)

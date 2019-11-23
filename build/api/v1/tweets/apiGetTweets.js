@@ -1,14 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var tweets_1 = require("../../../model/tweets");
-var data_1 = require("../../../data/data");
+var cheerio = require("cheerio");
+var request = require("request");
 exports.apiGetTweets = function (req, res, next) {
-    var account = req.params.id;
-    var selectedAccount = data_1.DataStore.tweets.find(function (element) { return element.id == account; });
-    if (selectedAccount) {
-        res.json(new tweets_1.Tweets(selectedAccount));
-    }
-    else {
-        res.json({ test: "error" });
-    }
+    request("https://twitter.com/" + req.params.id, function (error, response, body) {
+        console.log("/tweets GET status: " + (response && response.statusCode) + " - error:", error);
+        var $ = cheerio.load(body);
+        var teste = $('.js-tweet-text').text();
+        res.json({ tweets: teste });
+    });
+    // const account = req.params.id;
+    // const selectedAccount = DataStore.tweets.find((element: any) => element.id == account);
+    // if (selectedAccount) {
+    //   res.json(new Tweets(selectedAccount));
+    // }
+    // else {
+    //   res.json({ test: "error" });
+    // }
 };
