@@ -1,0 +1,14 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ffcoelho",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.7.2"
+  }
+}
