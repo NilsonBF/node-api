@@ -4,12 +4,14 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "tsc && node build/server.js",
+    "start": "nodemon -e ts -w ./ -x npm run serve"
   },
   "author": "ffcoelho",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.12",
