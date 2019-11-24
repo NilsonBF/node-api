@@ -7,6 +7,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var bodyparser = __importStar(require("body-parser"));
+const bodyparser = __importStar(require("body-parser"));
 exports.jsonParser = bodyparser.json();
 exports.urlEncodedParser = bodyparser.urlencoded({ extended: true });

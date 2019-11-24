@@ -7,8 +7,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose = __importStar(require("mongoose"));
-var dbTestsSchema = new mongoose.Schema({
+const mongoose = __importStar(require("mongoose"));
+const dbTestsSchema = new mongoose.Schema({
     number: Number,
     text: String
 });
