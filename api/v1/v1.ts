@@ -1,13 +1,14 @@
 import { Router } from "express";
 
-import { tweetsRouter } from "./tweets/apiTweets";
+import { cheerioRouter } from "./cheerio/apiCheerio";
 import { dbTestsRouter } from "./dbTests/apiDbTests";
 
 export const routerV1 = Router();
 
 routerV1.get("/", (req, res) => {
-  res.send("Japa Tests Node API - GET: /v1/tweets/{account}");
+  res.send("Japa Tests Node API");
 });
 
-routerV1.use("/tweets", tweetsRouter);
+
+routerV1.use("/cheerio", cheerioRouter);
 routerV1.use("/dbtests", dbTestsRouter);
